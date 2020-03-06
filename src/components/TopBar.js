@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
 class TopBar extends Component {
+    constructor(props) {
+        super(props)
+    }
+    
     render () {
-        return <div style={{width: '100%',height: '20px'}}>
-            <button>Logout</button>
-        </div>
+        return 
     }
 }
 

@@ -1,21 +1,32 @@
 import Select from 'react-select';
-import React, {useState} from 'react';
+import React, {Component} from 'react';
 
-function SelectOption(props) {
-    const [selectedOption, setSelectedOption] = useState(props.selectedOption);
-    const [options, setOptions] = useState([
-        { value: '1', label: 'Clients Spend History' },
-        { value: '2', label: 'Clients contacts management' },
-    ])
+class SelectOption extends Component {
+    constructor() {
+        super();
+        this.state = {
+            options: [
+                { value: '1', label: 'Clients Spend History' },
+                { value: '2', label: 'Clients contacts management' },
+            ],
+        }
+    }
 
-   
+    onChangeSelected = (sel) => {
+        this.props.onSelectedChanged(sel)
+    }
 
-    return (
-        <select 
-        value={selectedOption}
-        onChange={(selOption) => setSelectedOption(selOption)}
-        options={options}/>
-    )
+    render () {
+        const selectedOption = this.props.selectedOption;
+       
+        return (
+            <Select 
+            value={selectedOption}
+            onChange={this.onChangeSelected}
+            options={this.state.options}/>
+        )
+    }
+    
 
 }
 
