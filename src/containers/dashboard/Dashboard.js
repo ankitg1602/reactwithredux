@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import SelectOption from './../../components/Select'
 import { AgGridReact } from 'ag-grid-react';
-import TopBar from './../../components/TopBar';
 import api from './api'
 
 class Dashboard extends Component {
