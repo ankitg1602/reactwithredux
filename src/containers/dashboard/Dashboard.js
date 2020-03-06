@@ -74,8 +74,7 @@ class Dashboard extends Component {
 
     onGridReady = params => {
         this.gridApi = params.api;
-        this.gridColumnApi = params.columnApi;
-    
+        this.gridColumnApi = params.columnApi;    
         params.api.sizeColumnsToFit();
       };
 
@@ -101,9 +100,7 @@ class Dashboard extends Component {
                     resizable: true
                   },
             })
-        }
-
-       
+        }       
         this.setState({
             selectedValue: selValue,
             selectedOption: value
@@ -119,34 +116,27 @@ class Dashboard extends Component {
           })
       }
 
-      onLogout = () => {
-        debugger
+    onLogout = () => {
         this.props.history.push('/login')
     }
 
     render() {
         const selDropDownValue = this.state.selectedValue
         return (<div>
-            <div style={{width: '100%',height: '30px', textAlign: 'right', padding: '10px', backgroundColor: 'silver'}}>
-            <button onClick={this.onLogout} style={{padding: '5px', margin:'5px 30px'}}>Logout</button>
-        </div>
-            <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', padding: '20px'}}>
-                <div style={{width: '250px'}}>
-                <SelectOption selectedOption={this.state.selectedOption} onSelectedChanged={this.onChanged} />
-                </div>
-            
-            </div>
-            
-           
-            
-            <div className="ag-theme-balham" style={{height: '200px', margin: '20px 40px', overflow: 'hidden'}} >
-            {
-                selDropDownValue === "1" ?  <AgGridReact columnDefs={this.state.columnDefs} rowData={this.state.rowData} defaultColDef={this.state.defaultColDef} onGridReady={this.onGridReady} sizeColumnsToFit={true}/>
-               : <AgGridReact columnDefs={this.state.columnDefsContact} rowData={this.state.rowDataContact} sizeColumnsToFit={true} />
-
-            }
-               
-            </div>
+                   <div style={{width: '100%',height: '30px', textAlign: 'right', padding: '10px', backgroundColor: 'silver'}}>
+                         <button onClick={this.onLogout} style={{padding: '5px', margin:'5px 30px'}}>Logout</button>
+                  </div>
+                  <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', padding: '20px'}}>
+                        <div style={{width: '250px'}}>
+                             <SelectOption selectedOption={this.state.selectedOption} onSelectedChanged={this.onChanged} />
+                        </div>
+                  </div>
+                  <div className="ag-theme-balham" style={{height: '200px', margin: '20px 40px', overflow: 'hidden'}} >
+                    {
+                        selDropDownValue === "1" ?  <AgGridReact columnDefs={this.state.columnDefs} rowData={this.state.rowData} defaultColDef={this.state.defaultColDef} onGridReady={this.onGridReady} sizeColumnsToFit={true}/>
+                    : <AgGridReact columnDefs={this.state.columnDefsContact} rowData={this.state.rowDataContact} sizeColumnsToFit={true} />
+                    }
+              </div>
         </div>)
         
     }
