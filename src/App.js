@@ -17,8 +17,8 @@ export class App extends React.Component {
     return (
       <BrowserRouter>
           <Switch>
-            <Route exact path="/login" component={Login} />
-            <Route exact from="/" to="/login" />
+            <Route exact path="/" component={Login} />
+            {/* <Route exact from="/" to="/login" /> */}
             <Route exact path="/dashboard" component={Dashboard} />
           </Switch>
       </BrowserRouter>

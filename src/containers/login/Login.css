@@ -1,0 +1,107 @@
+/*----------------login css------------------*/
+#leftImgdiv {
+    background-size: cover;
+    background-position: center;
+  }
+  #forgtpas {
+    float: right;
+  }
+  #btndiv-login {
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+  }
+  #promoColor1 {
+    color: #4f677b;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .navTopLeft {
+    padding-top: 14px;
+  }
+  #subdiv-login {
+    margin-top: 60px;
+  }
+  p.text-white.copyrighttext {
+    text-align: center;
+  }
+  #btndiv2 {
+    margin-top: 50px;
+  }
+  button.btn.btn-primary.btn-square.shadow-sm.btncontact {
+    padding-right: 42px;
+    padding-left: 40px;
+    margin-top: 40px;
+    color: #44677b;
+    font-weight: 700;
+    font-size: 0.875rem;
+    background-color: #f3f0f0;
+  }
+  #divRight {
+    background-color: #fbfbfb !important;
+  }
+  div#signinform {
+    width: 60%;
+    margin: 110px auto;
+  }
+  form.border.rounded.p-5.formWidth {
+    background-color: #ffffff;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .text-cyan {
+    color: #44677b;
+  }
+  button.btn.btn-primary.btn-square.shadow-sm.btnsignin {
+    padding: 10px 42px;
+    margin-top: 10px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  input#loginInputEmail1 {
+    padding: 23px 12px;
+  }
+  input#loginPassword {
+    padding: 23px 12px;
+  }
+  img#logoImgLeft {
+    padding-left: 10px;
+  }
+  @media (min-width: 768px) {
+    .h-md-100 {
+      height: 100vh;
+    }
+  }
+  @media only screen and (max-width: 480px) {
+    h4#signIntext {
+      font-size: 16px;
+    }
+  }
+  button.btn.double-shade-contactus {
+    background-image: -webkit-linear-gradient(283deg, #4bb4fb 50%, #0d98fa 55%),
+      -webkit-linear-gradient(top, rgba(53, 10, 10, 0), transparent);
+    color: white;
+    font-size: 0.875rem !important;
+    border-radius: 2px;
+    padding: 10px 26px;
+    border: none;
+    font-weight: 800;
+    margin-top: 43px;
+  }
+  .login-text-right {
+    color: #f8f8f8;
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+  }
+  button.btn.get-started {
+    border: 1px solid #44677b;
+    color: #44677b;
+    font-size: 0.813rem;
+  }
+  .p-top-left {
+    padding: 14px;
+  }
+  .p-top-textin {
+    padding-top: 7px;
+  }
+  
