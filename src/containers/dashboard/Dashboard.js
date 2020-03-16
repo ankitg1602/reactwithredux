@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import SelectOption from './../../components/Select'
 import { AgGridReact } from 'ag-grid-react';
 import api from './api'
+import { withRouter } from 'react-router-dom';
 
 class Dashboard extends Component {
     constructor() {
@@ -172,7 +173,7 @@ class Dashboard extends Component {
         const sizeColumnsToFit = this.state.sizeColumnsToFit
         return (<div>
                    <div style={{textAlign: 'right', padding: '10px', backgroundColor: 'silver'}}>
-                         <button onClick={this.onLogout} style={{padding: '5px', margin:'5px 30px'}}>Logout</button>
+                         <button onClick={this.onLogout} style={{padding: '5px', color: 'white', backgroundColor: '#007bff'}}>Logout</button>
                   </div>
                   <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', padding: '20px'}}>
                         <div style={{width: '250px'}}>

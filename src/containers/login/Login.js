@@ -21,17 +21,6 @@ class Login extends Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.errors) {
-      this.setState({ errors: nextProps.errors });
-    }
-    //  !!nextProps.userData
-    if (!!nextProps.success && !nextProps.errors) {
-      //this.setState({ errors: nextProps.errors })
-      this.props.history.push('/dashboard');
-    }
-  }
-
   componentDidMount() {
     if (localStorage.getItem('userId')) {
       this.props.history.push('/dashboard')
@@ -75,13 +64,6 @@ class Login extends Component {
           className='col-md-4 p-0 bg-indigo h-md-100'
           style={{ backgroundImage: `url(${LogoAI})`}}
         >
-          <div className='divleftContent'>
-            <footer className='page-footer'>
-              <div className='footer-copyright text-center py-3 text-white'>
-               Login in Dashboard
-              </div>
-            </footer>
-          </div>
         </div>
         <div id='divRight' className='col-md-8 h-md-100 loginarea'>
           <div className='row j-c-f-end  p-top-left'>
@@ -91,7 +73,6 @@ class Login extends Component {
               <h4 id='signIntext'>
                 Sign in to <span id='promoColor1'>Dashboard</span>
               </h4>
-              <p>Enter your details below.</p>
               <div className='form-group mt-5'>
                 <label className='form-label' htmlFor='email'>
                   EMAIL
@@ -130,12 +111,7 @@ class Login extends Component {
                   </div>
                 </span>
               </div>
-              {errors && Object.entries(errors).length ? (
-                <span style={{ color: 'red' }}>Your Email or Password is Incorrect!</span>
-              ) : (
-                <span></span>
-              )}
-              <p>{message}</p>
+              <p style={{ color: 'red' }}>{message}</p>
               <div id='btndiv2'>
                 <button
                   type='submit'
@@ -150,21 +126,6 @@ class Login extends Component {
     );
   }
 }
-const mapStateToProps = ({ login }) => ({
-  errors: login.error,
-  success: login.success,
-  loading: login.loading,
-  userData: login.userData,
-});
 
-const mapDispatchToProps = dispatch => ({
-  loginUser: function(payload) {
-    console.log('loginUser:', payload, dispatch);
-    const rt = ''
-    // const rt = dispatch(loginUser(payload));
-    console.log(rt);
-    return rt;
-  },
-});
 export default Login;
 
