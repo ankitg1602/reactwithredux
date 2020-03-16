@@ -18,17 +18,20 @@ class Dashboard extends Component {
                 },
                 editable: false,
                 filter: "agNumberColumnFilter",
+                filterable: true
                 // filterParams: {
                 //     defaultOption: "startsWith",
                 //     caseSensitive: true,
                 //     suppressAndOrCondition: true
                 // }
             }, {
-                headerName: "Items Purchased",  field: "itemsPurchased",
+                headerName: "Items Purchased",  field: "itemsPurchased",filter: "agNumberColumnFilter",
+                filterable: false,
                 editable: false,
             }, {
                 headerName: "Amount in US Dollars",  
-                field: "amount",
+                field: "amount",filter: "agNumberColumnFilter",
+                filterable: false,
                 cellStyle: params => {
                     return this.cellStyle();
                   }, 
@@ -70,7 +73,8 @@ class Dashboard extends Component {
                   resetButton: true
                 }
             }, {
-                headerName: "Contact Title",  field: "contactTitle",
+                headerName: "Contact Title",  field: "contactTitle",filter: "agTextColumnFilter",
+                filterable: true
             }, {
                 headerName: "Company Name",  field: "companyName", filter: "agTextColumnFilter",
                 filterParams: {
@@ -78,7 +82,7 @@ class Dashboard extends Component {
                   resetButton: true
                 }
             }, {
-                headerName: "Address",  field: "address",
+                headerName: "Address",  field: "address",filter: "agTextColumnFilter",
             }, {
                 headerName: "Industry",  field: "industry", filter: "agTextColumnFilter",
                 filterParams: {
@@ -92,7 +96,7 @@ class Dashboard extends Component {
 
     cellStyle = () => {
         return {
-            background: '#fff',
+            background: '#f5f7f7',
             border: '1px solid #95A5A6',
             borderRadius: '2px',
             height: '28px'
@@ -144,6 +148,9 @@ class Dashboard extends Component {
 
       componentDidMount =  async () => {
         const data =await  api.getspendHistory() ;
+        if (!localStorage.getItem('userId')) {
+            this.props.history.push('/')
+          }
         this.setState({
             rowData: data.data.data,
             selectedValue: "1",
@@ -156,6 +163,7 @@ class Dashboard extends Component {
       }
 
     onLogout = () => {
+        localStorage.removeItem('userId')
         this.props.history.push('/')
     }
 
@@ -163,7 +171,7 @@ class Dashboard extends Component {
         const selDropDownValue = this.state.selectedValue
         const sizeColumnsToFit = this.state.sizeColumnsToFit
         return (<div>
-                   <div style={{width: '100%',height: '30px', textAlign: 'right', padding: '10px', backgroundColor: 'silver'}}>
+                   <div style={{textAlign: 'right', padding: '10px', backgroundColor: 'silver'}}>
                          <button onClick={this.onLogout} style={{padding: '5px', margin:'5px 30px'}}>Logout</button>
                   </div>
                   <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', padding: '20px'}}>

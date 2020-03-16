@@ -38,11 +38,14 @@
     background-color: #f3f0f0;
   }
   #divRight {
-    background-color: #fbfbfb !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,.075) !important;
   }
   div#signinform {
-    width: 60%;
-    margin: 110px auto;
+    width: 50%;
+    /* margin: 110px auto; */
   }
   form.border.rounded.p-5.formWidth {
     background-color: #ffffff;
